@@ -1,4 +1,4 @@
-// import Pro from "../views/page-2/Main";
+import Cart from "../views/cart/Main";
 import Products from "../views/products/Main";
 import SideMenu from "../layouts/side-menu/Main";
 import SimpleMenu from "../layouts/simple-menu/Main";
@@ -15,10 +15,10 @@ function Router() {
           path: "/",
           element: <Products />,
         },
-        // {
-        //   path: "page-2",
-        //   element: <Page2 />,
-        // },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
       ],
     },
     // {

@@ -65,11 +65,11 @@ function Main() {
     <>
       <h2 className='intro-y text-lg font-medium mt-10'>Products</h2>
       <button className='btn btn-primary shadow-md mx-4 my-4'>
-                  <a href='/cart'>View Cart</a>
-                </button>
+        <a href='/cart'>View Cart</a>
+      </button>
       <div className='grid grid-cols-12 gap-6 mt-5'>
         {/* BEGIN: Users Layout */}
-         
+
         {products.map((product) => (
           <div
             key={product.id}

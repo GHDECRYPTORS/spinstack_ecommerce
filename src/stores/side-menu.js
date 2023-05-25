@@ -9,11 +9,11 @@ const sideMenu = atom({
         pathname: "/",
         title: "Products",
       },
-      // {
-      //   icon: "Home",
-      //   pathname: "/page-2",
-      //   title: "Page 2",
-      // },
+      {
+        icon: "ShoppingCart",
+        pathname: "/cart",
+        title: "Checkout",
+      },
     ],
   },
 });
