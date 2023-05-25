@@ -12,12 +12,14 @@ import {
 } from "@/base-components";
 
 import { faker as $f } from "@/utils";
+import { Link } from "react-router-dom";
 import { cart as cartState } from "../../stores/cart";
 import classnames from "classnames";
 import products from "./products.json";
 import { useRecoilState } from "recoil";
 import { useState } from "react";
 
+// Link
 function Main() {
   const [deleteConfirmationModal, setDeleteConfirmationModal] = useState(false);
   const [cart, setCart] = useRecoilState(cartState);
@@ -65,7 +67,7 @@ function Main() {
     <>
       <h2 className='intro-y text-lg font-medium mt-10'>Products</h2>
       <button className='btn btn-primary shadow-md mx-4 my-4'>
-        <a href='/cart'>View Cart</a>
+        <Link to='/cart'>View Cart</Link>
       </button>
       <div className='grid grid-cols-12 gap-6 mt-5'>
         {/* BEGIN: Users Layout */}

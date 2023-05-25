@@ -56,108 +56,40 @@ function Main(props) {
               </li>
             </ol>
           </nav>
-          {/* END: Breadcrumb */}
-          {/* BEGIN: Search */}
-          {/* <div className="intro-x relative mr-3 sm:mr-6">
-            <div className="search hidden sm:block">
-              <input
-                type="text"
-                className="search__input form-control border-transparent"
-                placeholder="Search..."
-                onFocus={showSearchDropdown}
-                onBlur={hideSearchDropdown}
-              />
-              <Lucide
-                icon="Search"
-                className="search__icon dark:text-slate-500"
-              />
-            </div>
-            <a className="notification sm:hidden" href="">
-              <Lucide
-                icon="Search"
-                className="notification__icon dark:text-slate-500"
-              />
-            </a>
-            <div
-              className={classnames({
-                "search-result": true,
-                show: searchDropdown,
-              })}
-            >
-              <div className="search-result__content">
-                <div className="search-result__content__title">Pages</div>
-                <div className="mb-5">
-                  <a href="" className="flex items-center">
-                    <div className="w-8 h-8 bg-success/20 dark:bg-success/10 text-success flex items-center justify-center rounded-full">
-                      <Lucide icon="Inbox" className="w-4 h-4" />
-                    </div>
-                    <div className="ml-3">Mail Settings</div>
-                  </a>
-                  <a href="" className="flex items-center mt-2">
-                    <div className="w-8 h-8 bg-pending/10 text-pending flex items-center justify-center rounded-full">
-                      <Lucide icon="Users" className="w-4 h-4" />
-                    </div>
-                    <div className="ml-3">Users & Permissions</div>
-                  </a>
-                  <a href="" className="flex items-center mt-2">
-                    <div className="w-8 h-8 bg-primary/10 dark:bg-primary/20 text-primary/80 flex items-center justify-center rounded-full">
-                      <Lucide icon="CreditCard" className="w-4 h-4" />
-                    </div>
-                    <div className="ml-3">Transactions Report</div>
-                  </a>
-                </div>
-                <div className="search-result__content__title">Users</div>
-                <div className="mb-5">
-                  {$_.take($f(), 4).map((faker, fakerKey) => (
-                    <a
-                      key={fakerKey}
-                      href=""
-                      className="flex items-center mt-2"
-                    >
-                      <div className="w-8 h-8 image-fit">
-                        <img
-                          alt="Midone Tailwind HTML Admin Template"
-                          className="rounded-full"
-                          src={faker.photos[0]}
-                        />
-                      </div>
-                      <div className="ml-3">{faker.users[0].name}</div>
-                      <div className="ml-auto w-48 truncate text-slate-500 text-xs text-right">
-                        {faker.users[0].email}
-                      </div>
-                    </a>
-                  ))}
-                </div>
-                <div className="search-result__content__title">Products</div>
-                {$_.take($f(), 4).map((faker, fakerKey) => (
-                  <a key={fakerKey} href="" className="flex items-center mt-2">
-                    <div className="w-8 h-8 image-fit">
-                      <img
-                        alt="Midone Tailwind HTML Admin Template"
-                        className="rounded-full"
-                        src={faker.images[0]}
-                      />
-                    </div>
-                    <div className="ml-3">{faker.products[0].name}</div>
-                    <div className="ml-auto w-48 truncate text-slate-500 text-xs text-right">
-                      {faker.products[0].category}
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div> */}
-          {/* END: Search */}
-          {/* BEGIN: Notifications */}
+
           <Dropdown className='intro-x mr-4 sm:mr-6'>
             <DropdownToggle
               tag='div'
               role='button'
-              className='notification notification--bullet cursor-pointer'>
-              <Lucide
+              className='notification notification--bullet cursor-pointer flex'>
+              {/* <Lucide
                 icon='ShoppingCart'
                 className='notification__icon dark:text-slate-500'
-              />
+              /> */}
+              {/* badge showing cart length */}
+              <button
+                type='button'
+                class='relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg '>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  stroke-width='2'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  class='lucide lucide-shopping-cart'>
+                  <circle cx='8' cy='21' r='1'></circle>
+                  <circle cx='19' cy='21' r='1'></circle>
+                  <path d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12'></path>
+                </svg>
+                <span class='sr-only'>Notifications</span>
+                <div class='absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900'>
+                  {cart.products.length}
+                </div>
+              </button>
             </DropdownToggle>
             <DropdownMenu className='notification-content pt-2'>
               <DropdownContent tag='div' className='notification-content__box'>
@@ -193,7 +125,7 @@ function Main(props) {
                   </div>
                 ))}
                 <button className='btn btn-primary shadow-md mx-4 my-4'>
-                  <a href='/cart'>View Cart</a>
+                  <Link to='/cart'>View Cart</Link>
                 </button>
               </DropdownContent>
             </DropdownMenu>
