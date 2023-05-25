@@ -1,22 +1,28 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  Lucide,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownContent,
-  DropdownItem,
-  DropdownHeader,
-  DropdownDivider,
-} from "@/base-components";
-import logoUrl from "@/assets/images/logo.svg";
-import { faker as $f } from "@/utils";
 import * as $_ from "lodash";
+
+// useRecoilState
+import {
+  Dropdown,
+  DropdownContent,
+  DropdownDivider,
+  DropdownHeader,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Lucide,
+} from "@/base-components";
+
+import { faker as $f } from "@/utils";
+import { Link } from "react-router-dom";
+import { cart as cartState } from "../../stores/cart";
 import classnames from "classnames";
+import logoUrl from "@/assets/images/logo.svg";
+import { useRecoilState } from "recoil";
+import { useState } from "react";
 
 function Main(props) {
   const [searchDropdown, setSearchDropdown] = useState(false);
+  const [cart, setCart] = useRecoilState(cartState);
   const showSearchDropdown = () => {
     setSearchDropdown(true);
   };
@@ -27,32 +33,32 @@ function Main(props) {
   return (
     <>
       {/* BEGIN: Top Bar */}
-      <div className="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-12 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-12">
-        <div className="h-full flex items-center">
+      <div className='top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-12 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-12'>
+        <div className='h-full flex items-center'>
           {/* BEGIN: Logo */}
-          <Link to="/" className="-intro-x hidden md:flex">
+          <Link to='/' className='-intro-x hidden md:flex'>
             <img
-              alt="Icewall Tailwind HTML Admin Template"
-              className="w-6"
+              alt='Icewall Tailwind HTML Admin Template'
+              className='w-6'
               src={logoUrl}
             />
-            <span className="text-white text-lg ml-3"> Icewall </span>
+            <span className='text-white text-lg ml-3'> Demo Shop </span>
           </Link>
           {/* END: Logo */}
           {/* BEGIN: Breadcrumb */}
-          <nav aria-label="breadcrumb" className="-intro-x h-full mr-auto">
-            <ol className="breadcrumb breadcrumb-light">
-              <li className="breadcrumb-item">
-                <a href="#">Application</a>
+          <nav aria-label='breadcrumb' className='-intro-x h-full mr-auto'>
+            <ol className='breadcrumb breadcrumb-light'>
+              <li className='breadcrumb-item'>
+                <a href='#'>Application</a>
               </li>
-              <li className="breadcrumb-item active" aria-current="page">
+              <li className='breadcrumb-item active' aria-current='page'>
                 Dashboard
               </li>
             </ol>
           </nav>
           {/* END: Breadcrumb */}
           {/* BEGIN: Search */}
-          <div className="intro-x relative mr-3 sm:mr-6">
+          {/* <div className="intro-x relative mr-3 sm:mr-6">
             <div className="search hidden sm:block">
               <input
                 type="text"
@@ -140,60 +146,61 @@ function Main(props) {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
           {/* END: Search */}
           {/* BEGIN: Notifications */}
-          <Dropdown className="intro-x mr-4 sm:mr-6">
+          <Dropdown className='intro-x mr-4 sm:mr-6'>
             <DropdownToggle
-              tag="div"
-              role="button"
-              className="notification notification--bullet cursor-pointer"
-            >
+              tag='div'
+              role='button'
+              className='notification notification--bullet cursor-pointer'>
               <Lucide
-                icon="Bell"
-                className="notification__icon dark:text-slate-500"
+                icon='ShoppingCart'
+                className='notification__icon dark:text-slate-500'
               />
             </DropdownToggle>
-            <DropdownMenu className="notification-content pt-2">
-              <DropdownContent tag="div" className="notification-content__box">
-                <div className="notification-content__title">Notifications</div>
-                {$_.take($f(), 5).map((faker, fakerKey) => (
+            <DropdownMenu className='notification-content pt-2'>
+              <DropdownContent tag='div' className='notification-content__box'>
+                <div className='notification-content__title'>Cart</div>
+                {cart.products.map((product) => (
                   <div
-                    key={fakerKey}
+                    key={product.id}
                     className={classnames({
                       "cursor-pointer relative flex items-center": true,
-                      "mt-5": fakerKey,
-                    })}
-                  >
-                    <div className="w-12 h-12 flex-none image-fit mr-1">
+                      "mt-5": product.id !== cart.products[0].id,
+                    })}>
+                    <div className='w-12 h-12 flex-none image-fit mr-1'>
                       <img
-                        alt="Midone Tailwind HTML Admin Template"
-                        className="rounded-full"
-                        src={faker.photos[0]}
+                        alt='Midone Tailwind HTML Admin Template'
+                        className='rounded-full'
+                        src={product.image}
                       />
-                      <div className="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600"></div>
+                      <div className='w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600'></div>
                     </div>
-                    <div className="ml-2 overflow-hidden">
-                      <div className="flex items-center">
-                        <a href="" className="font-medium truncate mr-5">
-                          {faker.users[0].name}
+                    <div className='ml-2 overflow-hidden'>
+                      <div className='flex items-center'>
+                        <a href='' className='font-medium truncate mr-5'>
+                          {product.name}
                         </a>
-                        <div className="text-xs text-slate-400 ml-auto whitespace-nowrap">
+                        {/* <div className="text-xs text-slate-400 ml-auto whitespace-nowrap">
                           {faker.times[0]}
-                        </div>
+                        </div> */}
                       </div>
-                      <div className="w-full truncate text-slate-500 mt-0.5">
+                      {/* <div className="w-full truncate text-slate-500 mt-0.5">
                         {faker.news[0].shortContent}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ))}
+                <button className='btn btn-primary shadow-md mx-4 my-4'>
+                  <a href='/cart'>View Cart</a>
+                </button>
               </DropdownContent>
             </DropdownMenu>
           </Dropdown>
           {/* END: Notifications */}
           {/* BEGIN: Account Menu */}
-          <Dropdown className="intro-x w-8 h-8">
+          {/* <Dropdown className="intro-x w-8 h-8">
             <DropdownToggle
               tag="div"
               role="button"
@@ -231,7 +238,7 @@ function Main(props) {
                 </DropdownItem>
               </DropdownContent>
             </DropdownMenu>
-          </Dropdown>
+          </Dropdown> */}
           {/* END: Account Menu */}
         </div>
       </div>

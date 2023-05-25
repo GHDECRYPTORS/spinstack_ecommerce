@@ -1,6 +1,6 @@
 import _ from "lodash";
 import dayjs from "dayjs";
-
+import {v4 as uuidv4} from "uuid";
 const imageAssets = import.meta.globEager(
   `/src/assets/images/*.{jpg,jpeg,png,svg}`
 );
@@ -310,6 +310,9 @@ const fakers = {
     ];
     return _.shuffle(foods);
   },
+  fakeUUID() {
+    return uuidv4();
+  }
 };
 
 const fakerData = [];
@@ -317,6 +320,7 @@ for (let i = 0; i < 20; i++) {
   fakerData[fakerData.length] = {
     users: fakers.fakeUsers(),
     photos: fakers.fakePhotos(),
+    uuid: fakers.fakeUUID(),
     images: fakers.fakeImages(),
     dates: fakers.fakeDates(),
     times: fakers.fakeTimes(),

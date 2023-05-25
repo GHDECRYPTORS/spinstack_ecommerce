@@ -1,0 +1,137 @@
+[
+  {
+    "image": "/src/assets/images/preview-15.jpg",
+    "name": "Oppo Find X2 Pro",
+    "price": 91,
+    "category": "Smartphone & Tablet",
+    "stock": 103,
+    "status": "Active",
+    "id": "7c7410ba-faa0-4ee8-96ee-202b510ecbe4"
+  },
+  {
+    "image": "/src/assets/images/preview-9.jpg",
+    "name": "Nike Air Max 270",
+    "price": 36,
+    "category": "Sport & Outdoor",
+    "stock": 135,
+    "status": "Inactive",
+    "id": "f14b799f-51f9-469e-a1b4-4575ee57f040"
+  },
+  {
+    "image": "/src/assets/images/preview-1.jpg",
+    "name": "Apple MacBook Pro 13",
+    "price": 39,
+    "category": "PC & Laptop",
+    "stock": 96,
+    "status": "Active",
+    "id": "6ee2f5d0-216c-4ded-a502-5b74527298c6"
+  },
+  {
+    "image": "/src/assets/images/preview-4.jpg",
+    "name": "Nike Air Max 270",
+    "price": 154,
+    "category": "Sport & Outdoor",
+    "stock": 62,
+    "status": "Active",
+    "id": "60f6e266-af29-46ee-9288-1c033be5f90c"
+  },
+  {
+    "image": "/src/assets/images/preview-8.jpg",
+    "name": "Samsung Q90 QLED TV",
+    "price": 34,
+    "category": "Electronic",
+    "stock": 148,
+    "status": "Active",
+    "id": "4333cbe5-4911-4d32-bcd9-963e6d7db4cf"
+  },
+  {
+    "image": "/src/assets/images/preview-11.jpg",
+    "name": "Apple MacBook Pro 13",
+    "price": 101,
+    "category": "PC & Laptop",
+    "stock": 50,
+    "status": "Inactive",
+    "id": "4c426f3a-d082-42e4-8d83-30fb53b57ae5"
+  },
+  {
+    "image": "/src/assets/images/preview-10.jpg",
+    "name": "Samsung Q90 QLED TV",
+    "price": 54,
+    "category": "Electronic",
+    "stock": 155,
+    "status": "Active",
+    "id": "69e5d609-68c8-4a1a-be8e-2ba03511700d"
+  },
+  {
+    "image": "/src/assets/images/preview-7.jpg",
+    "name": "Apple MacBook Pro 13",
+    "price": 159,
+    "category": "PC & Laptop",
+    "stock": 115,
+    "status": "Inactive",
+    "id": "5edca1f7-b78e-407c-8089-fe955a2a98c5"
+  },
+  {
+    "image": "/src/assets/images/preview-4.jpg",
+    "name": "Oppo Find X2 Pro",
+    "price": 149,
+    "category": "Smartphone & Tablet",
+    "stock": 50,
+    "status": "Inactive",
+    "id": "71215308-ed61-42a6-8982-b5e9fa74eed0"
+  },
+  {
+    "image": "/src/assets/images/preview-8.jpg",
+    "name": "Samsung Galaxy S20 Ultra",
+    "price": 29,
+    "category": "Smartphone & Tablet",
+    "stock": 86,
+    "status": "Active",
+    "id": "2fde3a34-7880-48b8-af84-021e667fdfbe"
+  },
+  {
+    "image": "/src/assets/images/preview-7.jpg",
+    "name": "Dell XPS 13",
+    "price": 20,
+    "category": "PC & Laptop",
+    "stock": 50,
+    "status": "Active",
+    "id": "039af65c-b8a2-4175-b37f-ddca7620b600"
+  },
+  {
+    "image": "/src/assets/images/preview-11.jpg",
+    "name": "Apple MacBook Pro 13",
+    "price": 44,
+    "category": "PC & Laptop",
+    "stock": 50,
+    "status": "Active",
+    "id": "a55c6a1b-a449-45cb-9a49-ae2dc3081cb6"
+  },
+  {
+    "image": "/src/assets/images/preview-12.jpg",
+    "name": "Nike Tanjun",
+    "price": 168,
+    "category": "Sport & Outdoor",
+    "stock": 128,
+    "status": "Active",
+    "id": "40fe640c-9f6c-4cc4-bdd7-5d09e7a4f7bf"
+  },
+  {
+    "image": "/src/assets/images/preview-4.jpg",
+    "name": "Sony Master Series A9G",
+    "price": 98,
+    "category": "Electronic",
+    "stock": 181,
+    "status": "Active",
+    "id": "7403189c-952e-4c70-a74a-39bde47953a5"
+  },
+  {
+    "image": "/src/assets/images/preview-2.jpg",
+    "name": "Dell XPS 13",
+    "price": 23,
+    "category": "PC & Laptop",
+    "stock": 119,
+    "status": "Inactive",
+    "id": "a6c37f8b-08fb-4d48-aaa5-5d0e3e1897b1"
+  }
+]
