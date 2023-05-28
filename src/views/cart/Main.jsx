@@ -25,10 +25,10 @@ function Main() {
                   cart.products.reduce(
                     (acc, product) => acc + product.price * product.quantity,
                     0
-                  ) * 10**14
+                  ) * 10**18
                 ),
                 currency: "ETH",
-                customer_email: "yungdynamic53@gmail.com",
+                customer_email: "realworld@gmail.com",
                 customer_name: "David",
                 title: "Payment for E commerce",
                 description: "description",
