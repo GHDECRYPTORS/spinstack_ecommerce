@@ -1,18 +1,11 @@
 import * as $_ from "lodash";
 
-import {
-  Dropdown,
-  DropdownContent,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  Lucide,
-  Tippy,
-} from "@/base-components";
-
 import { faker as $f } from "@/utils";
+import { SpinStack } from "@myestery/spinstack";
+import { Tippy } from "@/base-components";
 import { cart as cartState } from "../../stores/cart";
 import { useRecoilState } from "recoil";
+import { v4 as uuid } from "uuid";
 
 function Main() {
   const [cart, setCart] = useRecoilState(cartState);
@@ -21,7 +14,28 @@ function Main() {
       <div className='intro-y flex flex-col sm:flex-row items-center mt-8'>
         <h2 className='text-lg font-medium mr-auto'>Checkout</h2>
         <div className='w-full sm:w-auto flex mt-4 sm:mt-0'>
-          <button className='btn btn-primary shadow-md mr-2'>
+          <button
+            className='btn btn-primary shadow-md mr-2'
+            onClick={async () => {
+              let url = await SpinStack.setup(
+                "pub-6b7e56f5-44f0-4c40-93c8-ffd6574051a4"
+              ).initializePayment({
+                tx_ref: uuid(),
+                amount_in_wei: String(
+                  cart.products.reduce(
+                    (acc, product) => acc + product.price * product.quantity,
+                    0
+                  ) * 10**14
+                ),
+                currency: "ETH",
+                customer_email: "yungdynamic53@gmail.com",
+                customer_name: "David",
+                title: "Payment for E commerce",
+                description: "description",
+              });
+              // open the payment url
+              window.open(url);
+            }}>
             Pay with Request
           </button>
           {/* <Dropdown className="ml-auto sm:ml-0">

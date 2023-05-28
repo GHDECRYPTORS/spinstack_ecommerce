@@ -8,6 +8,7 @@
     "start": "serve -s dist"
   },
   "dependencies": {
+    "@myestery/spinstack": "^0.0.3",
     "serve": "^13.0.2",
     "uuid": "^9.0.0"
   },
