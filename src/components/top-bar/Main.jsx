@@ -69,7 +69,7 @@ function Main(props) {
               {/* badge showing cart length */}
               <button
                 type='button'
-                class='relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg '>
+                className='relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='24'
@@ -80,13 +80,13 @@ function Main(props) {
                   stroke-width='2'
                   stroke-linecap='round'
                   stroke-linejoin='round'
-                  class='lucide lucide-shopping-cart'>
+                  className='lucide lucide-shopping-cart'>
                   <circle cx='8' cy='21' r='1'></circle>
                   <circle cx='19' cy='21' r='1'></circle>
                   <path d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12'></path>
                 </svg>
-                <span class='sr-only'>Notifications</span>
-                <div class='absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900'>
+                <span className='sr-only'>Notifications</span>
+                <div className='absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900'>
                   {cart.products.length}
                 </div>
               </button>
